@@ -1,0 +1,143 @@
+body {
+    background: black;
+    color: #ffefcc;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.title h1 {
+    margin-bottom: 0;
+    font-size: 3rem;
+}
+
+.title h2 {
+    font-style: italic;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.hint {
+    font-size: 1.5rem;
+    text-shadow: 0 5px 15px #ffefcc;
+    transition: text-shadow .3s, letter-spacing .3s;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.hint:hover {
+    text-shadow: 5px 0 15px #ffefcc;
+    letter-spacing: 2px;
+}
+
+.word-board {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    letter-spacing: 8px;
+    text-align: center;
+}
+
+.input-section {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.input-section input {
+    background: black;
+    border: 1px solid #ffefcc;
+    padding: 10px;
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    color: #ffefcc;
+    font-size: 3rem;
+    transition: box-shadow .3s;
+    text-align: center;
+}
+
+.input-section input::placeholder {
+    font-size: .8rem;
+    text-align: center;
+}
+
+.input-section input:hover {
+    box-shadow: 0 0 15px #ffefcc;
+}
+
+.btn {
+    background: black;
+    color: #ffefcc;
+    padding: 1rem 2rem;
+    border: 1px solid #ffefcc;
+    border-radius: 15px;
+    transition: box-shadow .3s, background-color .3s;
+    font-size: 1.2rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.restart-btn {
+    border: 1px solid #00cf00;
+    color: #00cf00;
+}
+
+.btn:hover {
+    box-shadow: 0 0 15px #ffefcc;
+}
+
+.restart-btn:hover {
+    box-shadow: 0 0 15px #00cf00;
+}
+
+.btn:active {
+    background: #3d3d3d;
+}
+
+.restart-btn:active {
+    background: #003d00;
+}
+
+@media (max-width: 400px) {
+    .title h1 {
+        font-size: 2rem;
+    }
+
+    .word-board {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+
+    .hint {
+        font-size: 1.2rem;
+    }
+
+    .input-section input {
+        width: 60px;
+        height: 60px;
+        font-size: 2.5rem;
+    }
+}
