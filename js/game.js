@@ -24,6 +24,8 @@ function initGame() {
     livesLeft = MAX_LIVES;
     guessedLetters = [];
     messageDisplay.textContent = "";
+    letterInput.disabled = false;
+    guessBtn.disabled = false;
 
     const randomIndex = Math.floor(Math.random() * WORDS_DATABASE.length);
     currentWord = WORDS_DATABASE[randomIndex].word;
@@ -53,13 +55,18 @@ function updateState() {
 
     if (allGuessed) {
         messageDisplay.textContent = "Поздравляем! Вы выйграли АААААААВТОМОБИЛЬ!";
-        isGameOver = true;
-        restartBtn.style.display = "block";
+        endGame();
     } else if (livesLeft <= 0) {
         messageDisplay.textContent = "Игра окончена! Вы почти угадали слово " + currentWord;
-        isGameOver = true;
-        restartBtn.style.display = "block";
+        endGame();
     }
+}
+
+function endGame() {
+    isGameOver = true;
+    restartBtn.style.display = "block";
+    letterInput.disabled = true;
+    guessBtn.disabled = true;
 }
 
 function handleGuess() {
@@ -67,10 +74,11 @@ function handleGuess() {
 
     const guess = letterInput.value.toLowerCase().trim();
     letterInput.value = "";
+    letterInput.focus();
 
-    const isSingleLetter = guess.length === 1 && /^[а-яёa-z]$/i.test(guess);
+    const isValidLetter = guess.length === 1 && /^[а-яёa-z]$/i.test(guess);
 
-    if (!isSingleLetter) {
+    if (!isValidLetter) {
         messageDisplay.textContent = "Введите ровно одну букву! Я хоть и код студента, но меня не обманешь!";
         return;
     }
@@ -83,11 +91,13 @@ function handleGuess() {
     guessedLetters.push(guess);
 
     if (currentWord.includes(guess)) {
-        messageDisplay.textContent = "Есть такая буква!";
+        messageDisplay.textContent = "Да ладно! Есть такая буква!";
     } else {
         livesLeft--;
         messageDisplay.textContent = "Увы и ах, нет такой буквы, как и одной жизни в запасе (я про игру, если что)";
     }
+
+    updateState();
 }
 
 guessBtn.addEventListener("click", handleGuess);
