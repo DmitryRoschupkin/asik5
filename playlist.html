@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Playlist</title>
+</head>
+<body>
+    <div class="playlist">
+        <h2>My playlist</h2>
+
+        <input type="text" id="search-input" placeholder="Search track or artist..." autocomplete="off">
+        <div id="search-message" class="message"></div>
+
+        <div class="playlist-stats">
+            <span>Amount of tracks: <strong id="track-count">0</strong></span>
+            <span>Total duration: <strong id="total-duration">0:00</strong></span>
+        </div>
+        <div id="limit-message" class="error-message"></div>
+
+        <div id="catalog-container" class="tracks-list"></div>
+    </div>
+
+    <script src="js/playlist.js" defer></script>
+</body>
+</html>
