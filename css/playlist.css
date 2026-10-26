@@ -1,0 +1,163 @@
+body {
+    background: black;
+    color: #ffefcc;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.playlist {
+    background: black;
+    border: 1px solid #ffefcc;
+    padding: 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 0 20px rgba(255, 239, 204, 0.1);
+    box-sizing: border-box;
+}
+
+.playlist h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #ffefcc;
+}
+
+#search-input {
+    width: 100%;
+    background: black;
+    border: 1px solid #ffefcc;
+    padding: 12px 15px;
+    border-radius: 10px;
+    color: #ffefcc;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    transition: box-shadow .3s;
+}
+
+#search-input::placeholder {
+    color: #aa9f88;
+}
+
+#search-input:hover, #search-input:focus {
+    box-shadow: 0 0 10px #ffefcc;
+}
+
+.message, .error-message {
+    color: #ff5555;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    text-align: center;
+    min-height: 20px;
+}
+
+.playlist-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    border-bottom: 1px dashed #ffefcc;
+    padding-bottom: 10px;
+}
+
+.tracks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.track-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    border: 1px solid #444;
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: border-color .3s, box-shadow .3s;
+}
+
+.track-card:hover {
+    border-color: #ffefcc;
+    box-shadow: 0 0 10px rgba(255, 239, 204, 0.2);
+}
+
+.track-card.in-playlist {
+    border-color: #00cf00;
+    background: #051a05;
+}
+
+.track-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    color: #ffefcc;
+}
+
+.track-info p {
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+.action-btn {
+    background: black;
+    color: #ffefcc;
+    border: 1px solid #ffefcc;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background .3s, box-shadow .3s;
+}
+
+.action-btn:hover {
+    box-shadow: 0 0 10px #ffefcc;
+}
+
+.remove-btn {
+    border-color: #ff5555;
+    color: #ff5555;
+}
+
+.remove-btn:hover {
+    box-shadow: 0 0 10px #ff5555;
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 10px;
+    }
+
+    .playlist {
+        padding: 15px;
+    }
+
+    .playlist h2 {
+        font-size: 1.6rem;
+    }
+
+    .playlist-stats {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+
+    .track-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .action-btn {
+        width: 100%;
+    }
+}
