@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CV Builder</title>
+</head>
+<body>
+    <div class="cv-container">
+        <h1>CV Builder</h1>
+
+        <div id="error-summary" class="error-summary" aria-live="polite"></div>
+
+        <div class="cv-layout">
+            <form id="cv-form" novalidate>
+                <div class="form-group">
+                    <label for="fullname">Name and Surname *</label>
+                    <input type="text" id="fullname" placeholder="John Smith" autocomplete="name">
+                    <span class="error-message" id="error-fullname"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="position">Target position *</label>
+                    <input type="text" id="position" placeholder="Backend Developer" autocomplete="organization-title">
+                    <span class="error-message" id="error-position"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" placeholder="john@example.com" autocomplete="email">
+                    <span class="error-message" id="error-email"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone *</label>
+                    <input type="tel" id="phone" placeholder="8 (800) 555 35-35" autocomplete="tel">
+                    <span class="error-message" id="error-phone"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="experience">Experience (years) *</label>
+                    <input type="number" id="experience" min="0" max="40" placeholder="2">
+                    <span class="error-message" id="error-experience"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="skills">Skills (separated by commas) *</label>
+                    <input type="text" id="skills" placeholder="Java, Spring Boot, Git, Docker">
+                    <span class="error-message" id="error-skills"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="bio">About you (minimum 10 words) *</label>
+                    <textarea id="bio" rows="3" placeholder="Tell about yourself!"></textarea>
+                    <span class="error-message" id="error-bio"></span>
+                </div>
+
+                <button type="submit" class="btn">Create CV!</button>
+            </form>
+
+            <div class="preview-card">
+                <h3>CV Preview</h3>
+                <div id="cv-preview">
+                    <h4 id="prev-name">Name Surname</h4>
+                    <p id="prev-position">Position</p>
+                    <hr>
+                    <p><strong>Email:</strong> <span id="prev-email">—</span></p>
+                    <p><strong>Phone:</strong> <span id="prev-phone">—</span></p>
+                    <p><strong>Experience:</strong> <span id="prev-experience">—</span> y.o</p>
+                    <p><strong>Skills:</strong> <span id="prev-skills">—</span></p>
+                    <p><strong>Bio:</strong> <span id="prev-bio">—</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="success-result" class="success-result" style="display: none;"></div>
+    </div>
+
+    <script src="js/cv-builder.js" defer></script>
+</body>
+</html>
